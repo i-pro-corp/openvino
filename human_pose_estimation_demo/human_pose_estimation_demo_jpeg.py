@@ -1,28 +1,39 @@
 #!/usr/bin/env python3
+"""
+ Copyright (C) 2020-2023 Intel Corporation
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+"""
 
-'''
-Copyright 2022 i-PRO Co., Ltd.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-'''
-
-'''
+"""
+File Name         : human_pose_estimation_demo_jpeg.py
+Base Source       : human_pose_estimation_demo.py
+Modification Date : 2023/4/15
+ 
+Description:
 This source code is based on and modified from human_pose_estimation_demo.py in Intel's open_model_zoo demo.
 The image input part is changed to a network camera, so please refer to the original to check the changes.
  
 このソースコードは、Intelのopen_model_zooデモのhuman_pose_estimation_demo.pyを元に、改変したものです。
 画像入力部分をネットワークカメラに変更していますので、変更点の確認はオリジナルを参照してください。
-'''
+
+Modifications point:
+Abolish argument('-i')
+Abolish argument('-o')
+Abolish open_images_capture()
+Add requests.get()
+
+-iオプションの廃止
+-oオプションの廃止
+open_images_captureを廃止し、requests.getでJPEGを取得する。
+"""
  
 import logging as log
 import sys
